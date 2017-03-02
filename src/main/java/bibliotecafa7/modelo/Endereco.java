@@ -2,7 +2,7 @@ package bibliotecafa7.modelo;
 
 import javax.persistence.Embeddable;
 
-@Embeddable
+//@Embeddable
 public class Endereco {
 
 	private Integer id;

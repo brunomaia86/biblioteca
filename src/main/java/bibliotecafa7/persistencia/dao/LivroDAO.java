@@ -1,5 +1,7 @@
 package bibliotecafa7.persistencia.dao;
 
+import java.util.Set;
+
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceException;
@@ -34,6 +36,12 @@ public class LivroDAO extends GenericDAO<Livro> implements LivroRepositorio {
 	public boolean remove(Livro t) throws IllegalArgumentException, TransactionRequiredException {
 		// TODO Auto-generated method stub
 		return super.remove(t);
+	}
+	
+	@Override
+	public Set<Livro> list() throws IllegalArgumentException {
+		// TODO Auto-generated method stub
+		return super.list();
 	}
 
 }

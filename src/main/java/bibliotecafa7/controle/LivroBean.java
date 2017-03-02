@@ -1,9 +1,8 @@
 package bibliotecafa7.controle;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import javax.faces.bean.ManagedBean;
 
@@ -15,6 +14,7 @@ import bibliotecafa7.persistencia.dao.LivroDAO;
 public class LivroBean {
 
 	private Livro livro = new Livro();
+	private Set<Livro> livros;
 	private List<Categoria> categorias = Arrays.asList(Categoria.values());
 	
 	/*public LivroBean() {
@@ -25,10 +25,13 @@ public class LivroBean {
 
 		}	}*/
 
-	public void salvar() {
+	public String salvar() {
 		LivroDAO dao = new LivroDAO();
 		dao.persist(livro);
 		livro = new Livro();
+		livros = null;
+		
+		return "lista-livros?faces-redirect=true";
 	}
 
 	public Livro getLivro() {
@@ -45,6 +48,16 @@ public class LivroBean {
 
 	public void setCategorias(List<Categoria> categorias) {
 		this.categorias = categorias;
+	}
+
+	public Set<Livro> getLivros() {
+		LivroDAO dao = new LivroDAO();
+		livros = dao.list();
+		return livros;
+	}
+
+	public void setLivros(Set<Livro> livros) {
+		this.livros = livros;
 	}
 
 }

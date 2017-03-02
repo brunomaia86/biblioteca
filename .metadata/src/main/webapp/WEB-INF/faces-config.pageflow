@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14879742185410" configfile="/bibliotecafa7/src/main/webapp/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14879742185410" configfile="/bibliotecafa7/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="livro/formulario-livro" id="pf14884121082228" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" inlinks="pf148841249443422" path="livro/formulario-livro"/>
+  <nodes xsi:type="pageflow:PFPage" name="livro/lista-livros" id="pf148841221620911" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" inlinks="pf148841234099717" path="livro/lista-livros"/>
+  <nodes xsi:type="pageflow:PFPage" name="formulario-livro.xhtml" id="pf148841225629614" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf148841234099719 pf148841234099717" path="livro/formulario-livro.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pagina-inicial" id="pf148841225629616" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf148841234099719 pf148841249443423" path="pagina-inicial"/>
+  <nodes xsi:type="pageflow:PFPage" name="livro/l.xhtml" id="pf148841249443424" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf148841249443423 pf148841249443422" path="livro/lista-livros.xhtml"/>
+  <links id="pf148841234099719" target="pf148841225629616" source="pf148841225629614" outcome="pagina-inicial"/>
+  <links id="pf148841234099717" target="pf148841221620911" source="pf148841225629614" outcome="lista-livros"/>
+  <links id="pf148841249443423" target="pf148841225629616" source="pf148841249443424" outcome="pagina-inicial"/>
+  <links id="pf148841249443422" target="pf14884121082228" source="pf148841249443424" outcome="formulario-livro"/>
+</pageflow:Pageflow>
