@@ -13,18 +13,27 @@ public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer cpf;
-	private String login;
+	private Integer id;
+	private String cpf;
+	private String usuario;
 	private String senha;
 	private String nome;
-	//private Endereco endereco;
+	// private Endereco endereco;
 	private Date dataNascimento;
 
-	public Integer getCpf() {
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(Integer cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
@@ -36,15 +45,11 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	/*@Embedded
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
-*/
+	/*
+	 * @Embedded public Endereco getEndereco() { return endereco; }
+	 * 
+	 * public void setEndereco(Endereco endereco) { this.endereco = endereco; }
+	 */
 	public Date getDataNascimento() {
 		return dataNascimento;
 	}
@@ -53,20 +58,20 @@ public class Usuario {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
 	public String getSenha() {
 		return senha;
 	}
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 }

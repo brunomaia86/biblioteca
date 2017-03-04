@@ -24,4 +24,9 @@ public class UsuarioDAO extends GenericDAO<Usuario> implements UsuarioRepositori
 		return super.persist(t);
 	}
 
+	@Override
+	public boolean merge(Usuario t) throws IllegalArgumentException, TransactionRequiredException {
+		// TODO Auto-generated method stub
+		return super.merge(t);
+	}
 }

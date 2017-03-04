@@ -1,23 +1,21 @@
 package bibliotecafa7.controle;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 
 import bibliotecafa7.modelo.Usuario;
 import bibliotecafa7.persistencia.dao.UsuarioDAO;
 
 @ManagedBean
-@SessionScoped
 public class UsuarioBean {
 
-	private Usuario usuario;
+	private Usuario usuario = new Usuario();
 
 	public String salvar() {
 		UsuarioDAO dao  = new UsuarioDAO();
-		dao.persist(usuario);
+		dao.merge(usuario);
 		usuario = new Usuario();
 		
-		return "login";
+		return "/login?faces-redirect=true";
 	}
 	
 	public Usuario getUsuario() {

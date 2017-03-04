@@ -9,11 +9,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-@Entity
+//@Entity
 public class Emprestimo {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private Date dataEmprestimo;
 	private Date dataDevolucao;

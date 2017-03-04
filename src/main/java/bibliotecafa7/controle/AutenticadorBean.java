@@ -28,7 +28,7 @@ public class AutenticadorBean {
 		Set<Usuario> clientes = dao.list();
 		
 		for (Usuario cliente : clientes) {
-			mapa.put(cliente.getLogin(), cliente.getSenha());
+			mapa.put(cliente.getUsuario(), cliente.getSenha());
 		}
 	}
 	
@@ -41,7 +41,7 @@ public class AutenticadorBean {
 			HttpSession session = (HttpSession) ec.getSession(false);
 			session.setAttribute("usuario", this.usuario);
 			
-			return "pagina-inicial";
+			return "pagina-inicial?faces-redirect=true";
  		} else {
  			FacesMessage fm = new FacesMessage("Usuario e/ou senha invalido");
  			fm.setSeverity(FacesMessage.SEVERITY_ERROR);
@@ -50,7 +50,7 @@ public class AutenticadorBean {
  		}
 	}
 	
-	public String registraSaida() {
+	public String sair() {
 		FacesContext fc = FacesContext.getCurrentInstance();
 		ExternalContext ec = fc.getExternalContext();
 		HttpSession session = (HttpSession) ec.getSession(false);
