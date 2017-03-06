@@ -17,26 +17,26 @@
 	</navigation-rule> -->
 	
 	<navigation-rule>
-		<from-view-id>livro/formulario-livro.xhtml</from-view-id>
+		<from-view-id>/livro/formulario-livro.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>pagina-inicial</from-outcome>
-			<to-view-id>pagina-inicial</to-view-id>
+			<to-view-id>/pagina-inicial</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>lista-livros</from-outcome>
-			<to-view-id>livro/lista-livros</to-view-id>
+			<to-view-id>/livro/lista-livros</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
 	<navigation-rule>
-		<from-view-id>livro/lista-livros.xhtml</from-view-id>
+		<from-view-id>/livro/lista-livros.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>pagina-inicial</from-outcome>
-			<to-view-id>pagina-inicial</to-view-id>
+			<to-view-id>/pagina-inicial</to-view-id>
 		</navigation-case>
 		<navigation-case>
-			<from-outcome>formulario-livro</from-outcome>
-			<to-view-id>livro/formulario-livro</to-view-id>
+			<from-outcome>livro/formulario-livro</from-outcome>
+			<to-view-id>/livro/formulario-livro</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
