@@ -1,30 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
-<h:head>
-	<title>Pagina Inicial</title>
-</h:head>
+<ui:composition template="/WEB-INF/template/template.xhtml">
 
-<h:body>
-	<h1>Biblioteca ONLINE!!!</h1>
 
-	<h2>Escolha oque deseja fazer:</h2>
+	<ui:define name="content">
+	<h1>Bem Vindo!</h1>
 	
-	Olá #{sessionScope.usuario}!
-	
-	<ul>
-		<li><h:link value="Inicial" outcome="pagina-inicial" /></li>
-		<li><h:link value="Crud Livro" outcome="/livro/formulario-livro" /></li>
-		<li><h:link value="Listar Livros" outcome="/livro/lista-livros" /></li>
-		<li><h:form>
-				<p:commandLink value="Sair(Logout)"
-					action="#{autenticadorBean.sair}" />
-			</h:form></li>
+	</ui:define>
 
-	</ul>
-</h:body>
-
+</ui:composition>
 </html>

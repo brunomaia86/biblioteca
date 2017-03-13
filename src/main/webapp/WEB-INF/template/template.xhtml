@@ -12,11 +12,26 @@
 <h:body>
 	<div id="header">
 		<ui:insert name="header">
-			<ul>
-				<li><h:link value="Inicial" outcome="pagina-inicial" /></li>
-				<li><h:link value="Crud Livro" outcome="formulario-livro" /></li>
-				<li><h:link value="Listar Livros" outcome="lista-livros" /></li>
-			</ul>
+			<h:form>
+				<p:menubar>
+					<p:menuitem value="Inicio" url="/pagina-inicial.xhtml"
+						icon="ui-icon-triangle-1-e" />
+					<p:submenu label="Usuario">
+						<p:submenu label="Cadastrar">
+							<p:menuitem value="Usuario"
+								url="/usuario/formulario-usuario.xhtml" icon="ui-icon-person" />
+						</p:submenu>
+					</p:submenu>
+					<p:submenu label="Livro">
+						<p:submenu label="Cadastrar">
+							<p:menuitem value="Cadastrar" url="/livro/formulario-livro.xhtml" />
+						</p:submenu>
+						<p:submenu label="Listar">
+							<p:menuitem value="Listar" url="/livro/lista-livros.xhtml" />
+						</p:submenu>
+					</p:submenu>
+				</p:menubar>
+			</h:form>
 		</ui:insert>
 	</div>
 

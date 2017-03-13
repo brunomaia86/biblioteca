@@ -1,26 +1,29 @@
 package bibliotecafa7.modelo;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
-//@Entity
+@Entity
 public class Emprestimo {
 
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private Date dataEmprestimo;
 	private Date dataDevolucao;
 	private Double valor;
-	//private Cliente cliente;
-	//private Livro livro;
-	
+	@OneToMany
+	private List<Livro> livrosEmprestados;
+	@OneToOne
+	private Usuario usuario;
+
 	public Integer getId() {
 		return id;
 	}
@@ -52,22 +55,21 @@ public class Emprestimo {
 	public void setValor(Double valor) {
 		this.valor = valor;
 	}
-	
-	/*@ManyToOne
-	public Cliente getCliente() {
-		return cliente;
+
+	public List<Livro> getLivrosEmprestados() {
+		return livrosEmprestados;
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-	@OneToMany
-	public Livro getLivro() {
-		return livro;
+	public void setLivrosEmprestados(List<Livro> livrosEmprestados) {
+		this.livrosEmprestados = livrosEmprestados;
 	}
 
-	public void setLivro(Livro livro) {
-		this.livro = livro;
+	public Usuario getUsuario() {
+		return usuario;
 	}
-*/
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 }

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -27,6 +28,11 @@ public class LivroBean {
 	 * 
 	 * } }
 	 */
+	@PostConstruct
+	public void init() {
+		LivroDAO dao = new LivroDAO();
+		livros = dao.list();
+	}
 
 	public String salvar() {
 		LivroDAO dao = new LivroDAO();
