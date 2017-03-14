@@ -1,6 +1,8 @@
 package bibliotecafa7.controle;
 
 import java.util.Arrays;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Set;
 
@@ -19,15 +21,8 @@ public class LivroBean {
 	private Livro livro = new Livro();
 	private Set<Livro> livros;
 	private List<Categoria> categorias = Arrays.asList(Categoria.values());
-
-	/*
-	 * public LivroBean() { categorias = for (Iterator iterator =
-	 * categorias.iterator(); iterator.hasNext();) { Categoria categoria =
-	 * (Categoria) iterator.next();
-	 * System.out.println(categoria.getCategoria());
-	 * 
-	 * } }
-	 */
+	private Date dataAtual = new Date();
+	
 	@PostConstruct
 	public void init() {
 		LivroDAO dao = new LivroDAO();
@@ -70,6 +65,14 @@ public class LivroBean {
 
 	public void setLivros(Set<Livro> livros) {
 		this.livros = livros;
+	}
+
+	public Date getDataAtual() {
+		return dataAtual;
+	}
+
+	public void setDataAtual(Date dataAtual) {
+		this.dataAtual = dataAtual;
 	}
 
 }

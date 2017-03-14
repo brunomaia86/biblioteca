@@ -17,7 +17,7 @@
 
 					<p:outputLabel value="Data de Lançamento: " />
 					<p:calendar value="#{livroBean.livro.dataLancamento}"
-						pattern="dd/MM/yyyy" />
+						pattern="dd/MM/yyyy" maxdate="#{livroBean.dataAtual}" />
 						
 					<p:outputLabel value="Genero: " />
 					<p:inputText value="#{livroBean.livro.genero}" />
